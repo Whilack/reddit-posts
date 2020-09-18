@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import Posts from '../collections/Posts.js';
 
-Meteor.publish('posts', function () {
+Meteor.publish('posts', () => {
   return Posts.find({}, { 
     fields: { 
       _id: 1, 

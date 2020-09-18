@@ -9,11 +9,11 @@ Meteor.startup(() => {
       result.data.data.children.forEach(element => {
         post = Posts.findOne({ id: element.data.id });
         if (post) {
-          Posts.update({ id: post.id }, { $set: element.data }, function (error, result) {
+          Posts.update({ id: post.id }, { $set: element.data },  (error, result) => {
             if (error) {
               throw new Meteor.Error(500, error.message);
             } else {
-              console.log("Update Successful: ", result);
+              console.log("Update successful: ", result);
             }
           });
         } else {
